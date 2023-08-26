@@ -9,7 +9,7 @@ import (
 type VarMap map[string]string
 
 var funcs = template.FuncMap{
-	//...
+	// Some functions...
 }
 
 // GetVariables devuelve un map con las variables que se van a utilizar en la plantilla

@@ -1,5 +1,7 @@
 package core
 
+import "fmt"
+
 type TempletError interface {
 	Error() error
 	Cause() string
@@ -20,7 +22,7 @@ func (e baseError) Cause() string {
 }
 
 func (e baseError) String() string {
-	return e.err.Error()
+	return fmt.Sprintf("[%s] %s", e.cause, e.err.Error())
 }
 
 func NewError(err error, cause string) TempletError {
